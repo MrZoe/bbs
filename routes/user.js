@@ -19,7 +19,6 @@ main.post('/register', (request, response) => {
     if (u !== 'false') {
         // 注册成功 则设置 session
         request.session.uid = u.id
-        console.log(u.id, request.session.uid)
     }
     response.json(u)
 })

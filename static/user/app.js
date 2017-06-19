@@ -99,7 +99,7 @@ const login = function () {
                     $('#id-p-login').fadeOut(800)
                 }, 4000)
             } else {
-                window.location.href = '/topic'
+                window.location.href = '/'
             }
         })
     })
@@ -127,7 +127,7 @@ const register = function () {
                     $('#id-p-register').fadeOut(1000)
                 }, 3000)
             } else {
-                window.location.href = '/topic'
+                window.location.href = '/'
             }
     })
     })
