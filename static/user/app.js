@@ -99,7 +99,14 @@ const login = function () {
                     $('#id-p-login').fadeOut(800)
                 }, 4000)
             } else {
-                window.location.href = '/'
+                loginBtn.text('登陆成功')
+                loginBtn.css({
+                    color: '#fff',
+                    backgroundColor: '#00cc00',
+                })
+                setTimeout(function () {
+                    window.location.href = '/'
+                }, 1000)
             }
         })
     })
@@ -127,7 +134,14 @@ const register = function () {
                     $('#id-p-register').fadeOut(1000)
                 }, 3000)
             } else {
-                window.location.href = '/'
+                registerBtn.text('注册成功')
+                registerBtn.css({
+                    color: '#fff',
+                    backgroundColor: '#00cc00',
+                })
+                setTimeout(function () {
+                    window.location.href = '/'
+                }, 1000)
             }
     })
     })

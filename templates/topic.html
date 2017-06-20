@@ -49,11 +49,11 @@
                             </div>
                             {% for h in hotTopics %}
                             <div class="cell">
-                                <a href="/topic/{{ h.id }}" class="cell-title size14">{{ h.title}}</a>
-                                <span class="float-right">
+                                <span class="float-right hot-count">
                                     <i class="fa fa-eye"></i>
                                     <span>{{ h.views }}</span>
                                 </span>
+                                <a href="/topic/{{ h.id }}" class="cell-title size14 hot-title">{{ h.title}}</a>
                             </div>
                             {% endfor %}
                         </div>
@@ -72,6 +72,16 @@
                                 <span class="cell-avatar">
                                     <img src="./static/topic/style/avatar.jpg" alt="头像" class="img-avatar">
                                 </span>
+                                <span class="cell-count">
+                                    <div class="count-comment text-left count">
+                                        <i class="fa fa-comment"></i>
+                                        <span>{{ t.reply }}</span>
+                                    </div>
+                                    <div class="count-browse text-left count">
+                                        <i class="fa fa-eye"></i>
+                                        <span>{{ t.views }}</span>
+                                    </div>
+                                </span>
                                 <span class="cell-content">
                                     <div class="cell-content-title">
                                         <a href="/topic/{{ t.id }}" class="cell-title">{{ t.title }}</a>
@@ -86,16 +96,6 @@
                                         {% else %}
                                         <span class="fade small">还没有人回复</span>
                                         {% endif %}
-                                    </div>
-                                </span>
-                                <span class="cell-count">
-                                    <div class="count-comment text-left count">
-                                        <i class="fa fa-comment"></i>
-                                        <span>{{ t.reply }}</span>
-                                    </div>
-                                    <div class="count-browse text-left count">
-                                        <i class="fa fa-eye"></i>
-                                        <span>{{ t.views }}</span>
                                     </div>
                                 </span>
                             </div>

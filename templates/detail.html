@@ -52,11 +52,11 @@
                             </div>
                             {% for h in hotTopics %}
                             <div class="cell">
-                                <a href="/topic/{{ h.id }}" class="cell-title size12">{{ h.title}}</a>
-                                <span class="float-right">
+                                <span class="float-right hot-count">
                                     <i class="fa fa-eye"></i>
                                     <span>{{ h.views }}</span>
                                 </span>
+                                <a href="/topic/{{ h.id }}" class="cell-title size12 hot-title">{{ h.title }}</a>
                             </div>
                             {% endfor %}
                         </div>

@@ -202,6 +202,7 @@ textarea {
 }
 
 .cell-avatar {
+    float: left;
     margin-right: 10px;
 }
 
@@ -210,9 +211,6 @@ textarea {
     height: 48px;
 }
 
-.cell-content {
-    text-align: left;
-}
 
 .cell-title {
     font-size: 16px;
@@ -294,6 +292,18 @@ textarea {
 .box > div{
     padding: 10px 0px 10px 0px;
 }
+
+.hot-title {
+    display: block;
+    margin-right: 45px;
+}
+
+.cell-count {
+    display: block;
+    width: 40px;
+}
+
+
 
 /* new */
 
