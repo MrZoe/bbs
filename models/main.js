@@ -37,9 +37,6 @@ class Model {
 
     static _newFromDict(dict) {
         const cls = this
-        // 下面这种初始化 model 的方式有 bug, 这种方式会用 form 直接重置数据库现有的内容
-        // 比如 dict 里 role 为 1, 但是 constructor 里面 this.role = 2, 这样就会被覆盖
-        // 所以先用一个空 object 初始化一个 model 实例, 然后动态改变值
         const m = new cls({})
         Object.keys(dict).forEach((k) => {
             m[k] = dict[k]

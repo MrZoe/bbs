@@ -4,6 +4,7 @@
 
 const User = require('../models/user')
 const Topic = require('../models/topic')
+
 const currentUser = (request) => {
     // 通过 session 获取 uid, 如果没有的话就设置成空字符串
     const uid = request.session.uid || ''

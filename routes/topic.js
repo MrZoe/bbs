@@ -33,19 +33,23 @@ main.get('/', (request, response) => {
     const board = Number(queryBoard(request.query.board))
     const topics = Topic.allList(board).reverse()
     const hotTopics = topFive()
+    const users = User.all()
     const args = {
         user: user,
         topics: topics,
         hotTopics: hotTopics,
         b: board,
+        users: users,
     }
     response.render('topic.html', args)
 })
 
 main.get('/new', loginRequired, (request, response) => {
     const user = currentUser(request)
+    const users = User.all()
     const args = {
         user: user,
+        users: users,
     }
     response.render('new.html', args)
 })
@@ -76,11 +80,13 @@ main.get('/:id', loginRequired, (request, response) => {
     const replys = Reply.find('topic_id', id)
     console.log(replys)
     // console.log(m)
+    const users = User.all()
     const args = {
         topic: m,
         hotTopics: hotTopics,
         user: user,
         replys: replys,
+        users: users,
     }
     response.render('detail.html', args)
 })

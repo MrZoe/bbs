@@ -17,6 +17,7 @@ class Reply extends Model {
         this.user_id = form.user_id || ''
         this.topic_id = Number(form.topic_id || 0)
         this.username = form.username || 0
+        this.topic_title = form.topic_title || 0
     }
 
     static createReply(form) {
@@ -25,7 +26,7 @@ class Reply extends Model {
         if ( cl < 101 && cl !== 0) {
             this.create(form)
             const topiId = Number(form.topic_id)
-            Topic.get(topiId, 'reply', form.username)
+            Topic.get(topiId, 'reply', form.username, form.user_id)
             return true
         } else {
             return false

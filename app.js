@@ -54,24 +54,26 @@ const { index } = require('./routes/index')
 const { user } = require('./routes/user')
 const { topic } = require('./routes/topic')
 const { reply } = require('./routes/reply')
+
 // 注册路由程序
 app.use('/', index)
 app.use('/user', user)
 app.use('/topic', topic)
 app.use('/reply', reply)
 
-// app.use((request, response) => {
-//     response.status(404)
-//     response.render('404.html')
-// })
+// 404 和 500 错误返回的页面
+app.use((request, response) => {
+    response.status(404)
+    response.render('404.html')
+})
 
-// app.use((error, request, response) => {
-//     console.error(error.stack)
-//     response.status(500)
-//     response.render('500.html')
-// })
-
-
+app.use((error, request, response) => {
+    console.error(error.stack)
+    response.status(500)
+    response.render('500.html')
+})
+//
+//
 const run = (port=5000, host='') => {
     const server = app.listen(port, host, () => {
         const address = server.address()

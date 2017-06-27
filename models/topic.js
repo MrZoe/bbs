@@ -20,9 +20,10 @@ class Topic extends Model {
         this.board_id = Number(form.board_id || 0)
         this.username = form.username || 0
         this.reply_username = form.reply_username || ''
+        this.reply_id = form.reply_id || 1
     }
 
-    static get(id, instance, username) {
+    static get(id, instance, username, replyId) {
         console.log(id)
         const m = Topic.findOne('id', id)
         if (instance === 'views') {
@@ -30,6 +31,7 @@ class Topic extends Model {
         } else if (instance === 'reply') {
             m.reply += 1
             m.reply_username = username
+            m.reply_id = replyId
         }
         m.save()
         return m

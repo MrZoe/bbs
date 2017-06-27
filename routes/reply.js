@@ -31,6 +31,7 @@ main.post('/:id', loginRequired, (request, response) => {
     const u = currentUser(request)
     form.user_id = u.id
     form.username = u.username
+    form.topic_title = Topic.findOne('id', Number(form.topic_id)).title
     const r = Reply.createReply(form)
     if (r === true) {
         response.json(true)

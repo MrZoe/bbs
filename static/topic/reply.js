@@ -19,15 +19,6 @@ const ajax = function(method, path, data, reseponseCallback) {
     r.send(data)
 }
 
-const chi = (ema) => {
-    if (ema === true) {
-        chifan()
-    } else {
-        chishuiguo()
-    }
-    return baole
-}
-
 const postReply = function () {
     // 获取文章数据
     const content = $('#id-new-reply').val()

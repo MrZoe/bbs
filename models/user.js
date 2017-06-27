@@ -1,5 +1,6 @@
 const Model = require('./main')
 const crypto = require('crypto')
+const moment = require('moment')
 
 class User extends Model {
     constructor(form={}) {
@@ -8,6 +9,8 @@ class User extends Model {
         this.username = form.username || ''
         this.password = form.password || ''
         this.note = form.note || ''
+        this.rank = form.rank || '大佬'
+        this.ct = moment().format('YYYY-MM-DD HH:mm:ss')
     }
 
     static create(form={}) {
