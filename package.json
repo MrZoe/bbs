@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "nodemon app.js"
+    "start": "pm2 start app.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
